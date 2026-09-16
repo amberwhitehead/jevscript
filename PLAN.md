@@ -8,7 +8,6 @@ runtime primitive. **Hocket** is the engine that runs it — parser,
 tree-walking interpreter, and the fusion/cache passes (§3). A hocket is a
 single line of music split between voices; Jevscript writes the notes,
 Hocket keeps the line continuous while Jev strikes the judgment notes.
-(The directory is still `typesafe_lang/`; renaming is the keeper's call.)
 
 ## 0. What the phrase can honestly mean
 
