@@ -1,0 +1,313 @@
+{
+  "recorded_at": "2026-09-16T17:46:18.711Z",
+  "model": "jev-latest",
+  "state": {
+    "ticket": {
+      "subject": "Payouts failing since this morning",
+      "body": "Our API integration started returning 500 errors on every payout call around 9am and nothing has gone through since. We have customers waiting on transfers. This is the third ticket we've opened about payouts this month and frankly it's getting ridiculous."
+    },
+    "account": {
+      "tier": "enterprise"
+    }
+  },
+  "questions": {
+    "kind": {
+      "type": "choice",
+      "instructions": "What is the main request in `ticket.body`?",
+      "criteria": {
+        "bug": "A defect or outage in our product is reported or implied.",
+        "billing": "About charges, invoices, refunds, or our payment processing.",
+        "feature": "Asks for new capability or a change in behavior.",
+        "other": "None of the above."
+      }
+    },
+    "urgent": {
+      "type": "noul",
+      "instructions": "The message in `ticket.body` conveys urgency or time-sensitivity.",
+      "criteria": {
+        "true": "Time pressure, ongoing harm, or a deadline is explicit.",
+        "false": "No urgency expressed; the matter can wait days."
+      }
+    },
+    "angry": {
+      "type": "score",
+      "instructions": "How frustrated does `ticket.body` read?",
+      "criteria": [
+        "Calm and neutral; states facts without complaint.",
+        "Frustrated but civil; complaints or repeated contact, no strong language.",
+        "Furious; strong language, threats to leave, or abuse."
+      ]
+    },
+    "has_repro": {
+      "type": "noul",
+      "instructions": "Does `ticket.body` include concrete steps, error text, times, or details an engineer could use to reproduce or investigate the problem?"
+    }
+  },
+  "batched": {
+    "label": "batched",
+    "ms": 246,
+    "request": {
+      "state": {
+        "ticket": {
+          "subject": "Payouts failing since this morning",
+          "body": "Our API integration started returning 500 errors on every payout call around 9am and nothing has gone through since. We have customers waiting on transfers. This is the third ticket we've opened about payouts this month and frankly it's getting ridiculous."
+        },
+        "account": {
+          "tier": "enterprise"
+        }
+      },
+      "model": "jev-latest",
+      "questions": {
+        "kind": {
+          "type": "choice",
+          "instructions": "What is the main request in `ticket.body`?",
+          "criteria": {
+            "bug": "A defect or outage in our product is reported or implied.",
+            "billing": "About charges, invoices, refunds, or our payment processing.",
+            "feature": "Asks for new capability or a change in behavior.",
+            "other": "None of the above."
+          }
+        },
+        "urgent": {
+          "type": "noul",
+          "instructions": "The message in `ticket.body` conveys urgency or time-sensitivity.",
+          "criteria": {
+            "true": "Time pressure, ongoing harm, or a deadline is explicit.",
+            "false": "No urgency expressed; the matter can wait days."
+          }
+        },
+        "angry": {
+          "type": "score",
+          "instructions": "How frustrated does `ticket.body` read?",
+          "criteria": [
+            "Calm and neutral; states facts without complaint.",
+            "Frustrated but civil; complaints or repeated contact, no strong language.",
+            "Furious; strong language, threats to leave, or abuse."
+          ]
+        },
+        "has_repro": {
+          "type": "noul",
+          "instructions": "Does `ticket.body` include concrete steps, error text, times, or details an engineer could use to reproduce or investigate the problem?"
+        }
+      }
+    },
+    "response": {
+      "model": "jev-1.13.0",
+      "answers": {
+        "kind": {
+          "type": "choice",
+          "choice": "bug",
+          "confidence": 0.99,
+          "probabilities": {
+            "bug": 0.99,
+            "billing": 0.01,
+            "other": 0,
+            "feature": 0
+          }
+        },
+        "urgent": {
+          "type": "noul",
+          "noul": 0.98
+        },
+        "angry": {
+          "type": "score",
+          "score": 1.01,
+          "confidence": 0.99,
+          "legend": {
+            "0": "Calm and neutral; states facts without complaint.",
+            "1": "Frustrated but civil; complaints or repeated contact, no strong language.",
+            "2": "Furious; strong language, threats to leave, or abuse."
+          },
+          "probabilities": {
+            "0": 0,
+            "1": 0.99,
+            "2": 0.01
+          }
+        },
+        "has_repro": {
+          "type": "noul",
+          "noul": 0.9
+        }
+      },
+      "usage": {
+        "input_tokens": 633,
+        "output_tokens": 94
+      }
+    }
+  },
+  "singles": [
+    {
+      "label": "single:kind",
+      "ms": 129,
+      "request": {
+        "state": {
+          "ticket": {
+            "subject": "Payouts failing since this morning",
+            "body": "Our API integration started returning 500 errors on every payout call around 9am and nothing has gone through since. We have customers waiting on transfers. This is the third ticket we've opened about payouts this month and frankly it's getting ridiculous."
+          },
+          "account": {
+            "tier": "enterprise"
+          }
+        },
+        "model": "jev-latest",
+        "questions": {
+          "kind": {
+            "type": "choice",
+            "instructions": "What is the main request in `ticket.body`?",
+            "criteria": {
+              "bug": "A defect or outage in our product is reported or implied.",
+              "billing": "About charges, invoices, refunds, or our payment processing.",
+              "feature": "Asks for new capability or a change in behavior.",
+              "other": "None of the above."
+            }
+          }
+        }
+      },
+      "response": {
+        "model": "jev-1.13.0",
+        "answers": {
+          "kind": {
+            "type": "choice",
+            "choice": "bug",
+            "confidence": 0.99,
+            "probabilities": {
+              "billing": 0.01,
+              "bug": 0.99,
+              "other": 0,
+              "feature": 0
+            }
+          }
+        },
+        "usage": {
+          "input_tokens": 461,
+          "output_tokens": 45
+        }
+      }
+    },
+    {
+      "label": "single:urgent",
+      "ms": 69,
+      "request": {
+        "state": {
+          "ticket": {
+            "subject": "Payouts failing since this morning",
+            "body": "Our API integration started returning 500 errors on every payout call around 9am and nothing has gone through since. We have customers waiting on transfers. This is the third ticket we've opened about payouts this month and frankly it's getting ridiculous."
+          },
+          "account": {
+            "tier": "enterprise"
+          }
+        },
+        "model": "jev-latest",
+        "questions": {
+          "urgent": {
+            "type": "noul",
+            "instructions": "The message in `ticket.body` conveys urgency or time-sensitivity.",
+            "criteria": {
+              "true": "Time pressure, ongoing harm, or a deadline is explicit.",
+              "false": "No urgency expressed; the matter can wait days."
+            }
+          }
+        }
+      },
+      "response": {
+        "model": "jev-1.13.0",
+        "answers": {
+          "urgent": {
+            "type": "noul",
+            "noul": 0.98
+          }
+        },
+        "usage": {
+          "input_tokens": 411,
+          "output_tokens": 20
+        }
+      }
+    },
+    {
+      "label": "single:angry",
+      "ms": 93,
+      "request": {
+        "state": {
+          "ticket": {
+            "subject": "Payouts failing since this morning",
+            "body": "Our API integration started returning 500 errors on every payout call around 9am and nothing has gone through since. We have customers waiting on transfers. This is the third ticket we've opened about payouts this month and frankly it's getting ridiculous."
+          },
+          "account": {
+            "tier": "enterprise"
+          }
+        },
+        "model": "jev-latest",
+        "questions": {
+          "angry": {
+            "type": "score",
+            "instructions": "How frustrated does `ticket.body` read?",
+            "criteria": [
+              "Calm and neutral; states facts without complaint.",
+              "Frustrated but civil; complaints or repeated contact, no strong language.",
+              "Furious; strong language, threats to leave, or abuse."
+            ]
+          }
+        }
+      },
+      "response": {
+        "model": "jev-1.13.0",
+        "answers": {
+          "angry": {
+            "type": "score",
+            "score": 1.01,
+            "confidence": 0.99,
+            "legend": {
+              "0": "Calm and neutral; states facts without complaint.",
+              "1": "Frustrated but civil; complaints or repeated contact, no strong language.",
+              "2": "Furious; strong language, threats to leave, or abuse."
+            },
+            "probabilities": {
+              "0": 0,
+              "1": 0.99,
+              "2": 0.01
+            }
+          }
+        },
+        "usage": {
+          "input_tokens": 425,
+          "output_tokens": 18
+        }
+      }
+    },
+    {
+      "label": "single:has_repro",
+      "ms": 135,
+      "request": {
+        "state": {
+          "ticket": {
+            "subject": "Payouts failing since this morning",
+            "body": "Our API integration started returning 500 errors on every payout call around 9am and nothing has gone through since. We have customers waiting on transfers. This is the third ticket we've opened about payouts this month and frankly it's getting ridiculous."
+          },
+          "account": {
+            "tier": "enterprise"
+          }
+        },
+        "model": "jev-latest",
+        "questions": {
+          "has_repro": {
+            "type": "noul",
+            "instructions": "Does `ticket.body` include concrete steps, error text, times, or details an engineer could use to reproduce or investigate the problem?"
+          }
+        }
+      },
+      "response": {
+        "model": "jev-1.13.0",
+        "answers": {
+          "has_repro": {
+            "type": "noul",
+            "noul": 0.9
+          }
+        },
+        "usage": {
+          "input_tokens": 383,
+          "output_tokens": 22
+        }
+      }
+    }
+  ]
+}
